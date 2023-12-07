@@ -75,8 +75,7 @@ button {
   color: #fff;
   transition: 0.2s;
 }
-button:hover,
-button:active {
+button:hover {
   background: rgb(0, 55, 92);
 }
 div {
@@ -85,5 +84,8 @@ div {
 @media (max-width: 800px) {
   button:hover {
     background: rgb(0, 153, 255);
+  }
+  button:active {
+    background: rgb(0, 55, 92);
   }
 }
