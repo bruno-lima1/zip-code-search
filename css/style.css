@@ -71,7 +71,8 @@ button {
   background: rgb(0, 153, 255);
   color: #fff;
 }
-button:hover {
+button:hover,
+button:focus {
   background: rgb(0, 103, 172);
 }
 div {
