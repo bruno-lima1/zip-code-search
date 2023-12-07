@@ -59,7 +59,7 @@ input {
   border-radius: 20px;
   border: 1px solid #000;
   outline: none;
-  padding: .25rem .5rem .25rem .5rem;
+  padding: .5rem;
 }
 button {
   width: 100%;
@@ -67,7 +67,7 @@ button {
   font-size: 1rem;
   border-radius: 20px;
   border: none;
-  padding: .25rem;
+  padding: .5rem;
   background: rgb(0, 153, 255);
   color: #fff;
 }
