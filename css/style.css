@@ -70,10 +70,11 @@ button {
   padding: .5rem;
   background: rgb(0, 153, 255);
   color: #fff;
+  transition: .2s;
 }
-button:hover,
-button:focus {
-  background: rgb(0, 103, 172);
+button:active,
+button:hover {
+  background: rgb(0, 55, 92);
 }
 div {
   margin-top: 1rem;
