@@ -2,9 +2,7 @@ const cep = document.querySelector("[data-cep]");
 const button = document.querySelector("[data-button]");
 const adress = document.querySelector("[data-adress]");
 if (cep && button && adress) {
-  ["touchstart", "click"].forEach((userEvent) => {
-    button.addEventListener(userEvent, showAdress);
-  });
+  button.addEventListener("click", showAdress);
   function showAdress(event) {
     event.preventDefault();
     const cepValue = cep.value;
