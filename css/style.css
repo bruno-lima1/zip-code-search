@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 body {
-  margin: 1rem;;
+  margin: 1rem;
   font-family: "Rubik", sans-serif;
   background: #eee;
 }
@@ -53,13 +53,13 @@ form {
 input {
   width: 100%;
   box-sizing: border-box;
-  margin: .25rem 0 .5rem 0;
+  margin: 0.25rem 0 0.5rem 0;
   font-size: 1rem;
   font-family: "Rubik", sans-serif;
   border-radius: 20px;
   border: 1px solid #000;
   outline: none;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 input:focus {
   border: 2px solid rgb(0, 153, 255);
@@ -70,10 +70,10 @@ button {
   font-size: 1rem;
   border-radius: 20px;
   border: none;
-  padding: .5rem;
+  padding: 0.5rem;
   background: rgb(0, 153, 255);
   color: #fff;
-  transition: .2s;
+  transition: 0.2s;
 }
 button:hover,
 button:active {
@@ -81,4 +81,9 @@ button:active {
 }
 div {
   margin-top: 1rem;
+}
+@media (max-width: 800px) {
+  button:hover {
+    background: rgb(0, 153, 255);
+  }
 }
