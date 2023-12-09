@@ -17,7 +17,7 @@ if (cep && button && adress) {
     fetch(`https://viacep.com.br/ws/${value}/json`)
       .then((response) => response.json())
       .then((data) => {
-        const dataFormatted = `CEP: ${data.cep}\n Logradouro: ${data.logradouro}\n Bairro: ${data.bairro}\n Complemento: ${data.complemento}\n Localidade: ${data.localidade}\n UF: ${data.uf}\n DDD: ${data.ddd}\n`;
+        const dataFormatted = `CEP: ${data.cep}\n Logradouro: ${data.logradouro}\n Bairro: ${data.bairro}\n Complemento: ${data.complemento}\n Cidade: ${data.localidade}\n UF: ${data.uf}\n DDD: ${data.ddd}\n`;
         return data.erro
           ? (adress.innerText =
               "Esse CEP não existe, verifique e digite novamente")
