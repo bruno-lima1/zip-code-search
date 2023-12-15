@@ -13,15 +13,12 @@ if (cep && button && adress) {
       ? showAdress(cep.value)
       : (adress.innerText = "CEP inválido, insira pelo menos 8 dígitos");
   }
-  function showAdress(value) {
-    fetch(`https://viacep.com.br/ws/${value}/json`)
-      .then((response) => response.json())
-      .then((data) => {
-        const dataFormatted = `CEP: ${data.cep}\n Logradouro: ${data.logradouro}\n Bairro: ${data.bairro}\n Complemento: ${data.complemento}\n Cidade: ${data.localidade}\n UF: ${data.uf}\n DDD: ${data.ddd}\n`;
-        return data.erro
-          ? (adress.innerText =
-              "Esse CEP não existe, verifique e digite novamente")
-          : (adress.innerText = dataFormatted);
-      });
+  async function showAdress(value) {
+    const response = await fetch(`https://viacep.com.br/ws/${value}/json`);
+    const data = await response.json();
+    const dataFormatted = `CEP: ${data.cep}\n Logradouro: ${data.logradouro}\n Bairro: ${data.bairro}\n Complemento: ${data.complemento}\n Cidade: ${data.localidade}\n UF: ${data.uf}\n DDD: ${data.ddd}\n`;
+    return data.erro
+      ? (adress.innerText = "Esse CEP não existe, verifique e digite novamente")
+      : (adress.innerText = dataFormatted);
   }
 }
