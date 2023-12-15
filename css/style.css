@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 body {
   font-family: "Rubik", sans-serif;
+  background: #eee;
 }
 section {
   display: flex;
@@ -9,11 +10,10 @@ section {
 }
 form {
   text-align: center;
-  background: #eee;
+  background: #fff;
   padding: 1rem;
   max-width: 400px;
   border-radius: 4px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 input {
   width: 100%;
