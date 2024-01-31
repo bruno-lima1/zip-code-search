@@ -14,11 +14,16 @@ if (cep && button && adress) {
     return (cep.value = cep.value.replace(/\D/, ""));
   }
   async function showAdress(cep) {
-    const response = await fetch(`https://viacep.com.br/ws/${cep}/json`);
-    const data = await response.json();
-    const dataFormatted = `CEP: ${data.cep}\n Logradouro: ${data.logradouro}\n Bairro: ${data.bairro}\n Complemento: ${data.complemento}\n Cidade: ${data.localidade}\n UF: ${data.uf}\n DDD: ${data.ddd}`;
-    return data.erro
-      ? (adress.innerHTML = "Esse CEP não existe, verifique e digite novamente")
-      : (adress.innerText = dataFormatted);
+    try {
+      const response = await fetch(`https://viacep.com.br/ws/${cep}/json`);
+      const data = await response.json();
+      const dataFormatted = `CEP: ${data.cep}\n Logradouro: ${data.logradouro}\n Bairro: ${data.bairro}\n Complemento: ${data.complemento}\n Cidade: ${data.localidade}\n UF: ${data.uf}\n DDD: ${data.ddd}`;
+      return data.erro
+        ? (adress.innerHTML =
+            "Esse CEP não existe, verifique e digite novamente")
+        : (adress.innerText = dataFormatted);
+    } catch (erro) {
+      console.log(erro);
+    }
   }
 }
