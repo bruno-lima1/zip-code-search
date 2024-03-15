@@ -23,12 +23,12 @@ input {
   font-size: 1rem;
   font-family: "Rubik", sans-serif;
   border-radius: 20px;
-  border: 1px solid #000;
+  border: 2px solid rgb(0, 153, 255);
   outline: none;
   padding: 0.5rem;
 }
-input:focus {
-  border: 2px solid rgb(0, 153, 255);
+input.error {
+  border-color: red;
 }
 button {
   width: 100%;
