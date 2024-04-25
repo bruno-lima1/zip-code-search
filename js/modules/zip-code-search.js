@@ -3,10 +3,17 @@ export default function zipCodeSearch(input, search, message) {
   const button = document.querySelector(search);
   const adress = document.querySelector(message);
 
+  const clear = () => {
+    return cep.value.replace(/\D/gi, "")
+  }
+  const build = () => {
+    return cep.value.replace(/(\d{5})(\d{3})/gi, "$1-$2")
+  }
   const removeNonNumbers = () => {
     return cep.value = cep.value.replace(/[^\d-]/gi, "")
-  }
+  }  
   const cepIsValid = (event) => {
+    cep.value = build(clear(cep.value))
     event.preventDefault();
     return /(\d{5})-?(\d{3})/gi.test(cep.value)
     ? showAdress()
