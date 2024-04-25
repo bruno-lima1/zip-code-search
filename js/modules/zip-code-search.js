@@ -9,16 +9,17 @@ export default function zipCodeSearch(input, search, message) {
   const cepIsValid = (event) => {
     event.preventDefault();
     return /(\d{5})-?(\d{3})/gi.test(cep.value)
-    ? showAdress(cep.value)
+    ? showAdress()
     : (adress.innerHTML = "CEP inválido, verifique e digite novamente") && cep.classList.add("error");
   }
   if (cep && button && adress) {
     cep.addEventListener("input", removeNonNumbers);
+    cep.addEventListener("change", cepIsValid);
     button.addEventListener("click", cepIsValid);
   }
-  const showAdress = async (cepValue) => {
+  const showAdress = async () => {
     try {
-      const response = await fetch(`https://viacep.com.br/ws/${cepValue}/json`);
+      const response = await fetch(`https://viacep.com.br/ws/${cep.value}/json`);
       const data = await response.json();
       const dataFormatted = `CEP: ${data.cep}\n Logradouro: ${data.logradouro}\n Bairro: ${data.bairro}\n Complemento: ${data.complemento}\n Cidade: ${data.localidade}\n UF: ${data.uf}\n DDD: ${data.ddd}`;
       return data.erro
