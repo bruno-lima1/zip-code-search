@@ -12,15 +12,15 @@ export default function zipCodeSearch(input, search, message) {
   const removeNonNumbers = () => {
     return cep.value = cep.value.replace(/[^\d-]/gi, "")
   }  
-  const returnCEP = (event) => {
-    event.preventDefault();
-    return validation()
-      ? (cep.value = build(clear(cep.value)), cep.classList.remove("error"), showAdress())
-      : (cep.classList.add("error"), adress.innerHTML = "CEP inválido, verifique e digite novamente");
-  }
   const validation = () => {
     const matchCEP = cep.value.match(/\d{5}-?\d{3}/gi)
     return matchCEP && matchCEP[0] === cep.value
+  }
+  const returnCEP = (event) => {
+    event.preventDefault();
+    return validation()
+    ? (cep.value = build(clear(cep.value)), cep.classList.remove("error"), showAdress())
+    : (cep.classList.add("error"), adress.innerHTML = "CEP inválido, verifique e digite novamente");
   }
   if (cep && button && adress) {
     cep.addEventListener("input", removeNonNumbers);
@@ -33,8 +33,8 @@ export default function zipCodeSearch(input, search, message) {
       const data = await response.json();
       const dataFormatted = `CEP: ${data.cep}\n Logradouro: ${data.logradouro}\n Bairro: ${data.bairro}\n Complemento: ${data.complemento}\n Cidade: ${data.localidade}\n UF: ${data.uf}\n DDD: ${data.ddd}`;
       return data.erro
-        ? (adress.innerHTML = "Esse CEP não existe, verifique e digite novamente") && cep.classList.add("error")
-        : (adress.innerText = dataFormatted) && cep.classList.remove("error");
+        ? (cep.classList.add("error"), adress.innerHTML = "Esse CEP não existe, verifique e digite novamente")
+        : (cep.classList.remove("error"), adress.innerText = dataFormatted);
     } catch (erro) {
       console.log(erro);
     }
