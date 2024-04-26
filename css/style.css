@@ -45,7 +45,7 @@ button {
 button:hover {
   background: rgb(0, 55, 92);
 }
-div {
+span {
   margin-top: 1rem;
 }
 @media (max-width: 800px) {
