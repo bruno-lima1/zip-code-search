@@ -12,17 +12,20 @@ export default function zipCodeSearch(input, search, message) {
   const removeNonNumbers = () => {
     return cep.value = cep.value.replace(/[^\d-]/gi, "")
   }  
-  const cepIsValid = (event) => {
-    cep.value = build(clear(cep.value))
+  const returnCEP = (event) => {
     event.preventDefault();
-    return /(\d{5})-?(\d{3})/gi.test(cep.value)
-    ? showAdress()
-    : (adress.innerHTML = "CEP inválido, verifique e digite novamente") && cep.classList.add("error");
+    return validation()
+      ? (cep.value = build(clear(cep.value)), cep.classList.remove("error"), showAdress())
+      : (cep.classList.add("error"), adress.innerHTML = "CEP inválido, verifique e digite novamente");
+  }
+  const validation = () => {
+    const matchCEP = cep.value.match(/\d{5}-?\d{3}/gi)
+    return matchCEP && matchCEP[0] === cep.value
   }
   if (cep && button && adress) {
     cep.addEventListener("input", removeNonNumbers);
-    cep.addEventListener("change", cepIsValid);
-    button.addEventListener("click", cepIsValid);
+    cep.addEventListener("change", returnCEP);
+    button.addEventListener("click", returnCEP);
   }
   const showAdress = async () => {
     try {
