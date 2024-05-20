@@ -23,12 +23,16 @@ input {
   font-size: 1rem;
   font-family: "Rubik", sans-serif;
   border-radius: 20px;
-  border: 2px solid rgb(0, 153, 255);
+  border: 1px solid #ccc;
   outline: none;
   padding: 0.5rem;
 }
+input:focus,
+ipnut.valid {
+  border: 2px solid rgb(0, 153, 255)
+}
 input.error {
-  border-color: red;
+  border: 2px solid red;
 }
 button {
   width: 100%;
