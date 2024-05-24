@@ -2,6 +2,7 @@
 body {
   font-family: "Rubik", sans-serif;
   background: #f0f4f9;
+  color: #1f1f1f
 }
 section {
   display: flex;
