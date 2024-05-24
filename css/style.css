@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 body {
   font-family: "Rubik", sans-serif;
-  background: #eee;
+  background: #f0f4f9;
 }
 section {
   display: flex;
@@ -14,7 +14,6 @@ form {
   padding: 1rem;
   max-width: 400px;
   border-radius: 4px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 input {
   width: 100%;
@@ -27,12 +26,11 @@ input {
   outline: none;
   padding: 0.5rem;
 }
-input:focus,
-ipnut.valid {
-  border: 2px solid rgb(0, 153, 255)
+input:focus {
+  border: 2px solid #114fb4
 }
 input.error {
-  border: 2px solid red;
+  border: 2px solid #B3261E;
 }
 button {
   width: 100%;
@@ -42,21 +40,24 @@ button {
   border-radius: 20px;
   border: none;
   padding: 0.5rem;
-  background: rgb(0, 153, 255);
+  background: #0a57d0;
   color: #fff;
   transition: 0.2s;
 }
 button:hover {
-  background: rgb(0, 55, 92);
+  background: #061b3e
 }
 span {
   margin-top: 1rem;
 }
+[data-adress].error {
+  color: #b3261e
+}
 @media (max-width: 800px) {
   button:hover {
-    background: rgb(0, 153, 255);
+    background: #0a57d0;
   }
   button:active {
-    background: rgb(0, 55, 92);
+    background: #114fb4
   }
 }
