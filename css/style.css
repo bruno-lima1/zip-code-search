@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 body {
   font-family: "Rubik", sans-serif;
-  background: #f0f4f9;
-  color: #1f1f1f
+  background: #fff;
+  color: #1d1d1f;
 }
 section {
   display: flex;
@@ -11,10 +11,10 @@ section {
 }
 form {
   text-align: center;
-  background: #fff;
+  background: #f5f5f7;
   padding: 1rem;
   max-width: 400px;
-  border-radius: 30px;
+  border-radius: 20px;
 }
 input {
   width: 100%;
@@ -22,43 +22,41 @@ input {
   margin: 0.25rem 0 0.5rem 0;
   font-size: 1rem;
   font-family: "Rubik", sans-serif;
-  border-radius: 20px;
-  border: 1px solid #ccc;
+  border-radius: 10px;
+  border: 1px solid #000;
   outline: none;
   padding: 0.5rem;
 }
 input:focus {
-  border: 2px solid #114fb4
+  border: 2px solid #000
 }
 input.error {
-  border: 2px solid #B3261E;
+  border: 1px solid #e30000;
+  background: #fff2f4
 }
 button {
   width: 100%;
   cursor: pointer;
   font-family: "Rubik", sans-serif;
   font-size: 1rem;
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   padding: 0.5rem;
-  background: #0a57d0;
-  color: #fff;
+  background: #0071e3;
+  color: #f5f5f7;
   transition: 0.2s;
 }
 button:hover {
-  background: #061b3e
+  background: #0177ED;
 }
 span {
   margin-top: 1rem;
 }
 [data-adress].error {
-  color: #b3261e
+  color: #e30000
 }
 @media (max-width: 800px) {
-  button:hover {
-    background: #0a57d0;
-  }
   button:active {
-    background: #114fb4
+    background: #0177ED;
   }
 }
